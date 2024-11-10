@@ -9,13 +9,20 @@ import {
   } from "@/components/ui/sheet"
   
   import BurgerMenu from '@/public/icons/hamburger.svg'
+import Image from 'next/image'
 
 const MobileNav = () => {
   return (
    <section className='w-full max-w-[264px]'>
 <Sheet>
   <SheetTrigger>
-    
+    <Image
+    src={BurgerMenu}
+    width={36}
+    height={36}
+    alt='hamburger menu'
+    className='cursor-pointer sm:hidden'
+    />
   </SheetTrigger>
   <SheetContent>
     <SheetHeader>
