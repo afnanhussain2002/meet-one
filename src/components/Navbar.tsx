@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import logo from '@/public/icons/logo.svg'
+import MobileNav from './MobileNav'
 
 const Navbar = () => {
   return (
@@ -19,6 +20,10 @@ const Navbar = () => {
     />
     <p className='text-[26px] font-extrabold text-white max-sm:hidden'>MeetOne</p>
       </Link>
+
+      <div className='flex-between gap-5'>
+      <MobileNav/>
+      </div>
 
     </nav>
   )
