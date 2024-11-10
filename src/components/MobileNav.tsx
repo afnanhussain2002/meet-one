@@ -9,13 +9,15 @@ import {
   } from "@/components/ui/sheet"
   
   import BurgerMenu from '@/public/icons/hamburger.svg'
+  import logo from '@/public/icons/logo.svg'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const MobileNav = () => {
   return (
    <section className='w-full max-w-[264px]'>
 <Sheet>
-  <SheetTrigger>
+  <SheetTrigger asChild>
     <Image
     src={BurgerMenu}
     width={36}
@@ -24,14 +26,21 @@ const MobileNav = () => {
     className='cursor-pointer sm:hidden'
     />
   </SheetTrigger>
-  <SheetContent>
-    <SheetHeader>
-      <SheetTitle>Are you absolutely sure?</SheetTitle>
-      <SheetDescription>
-        This action cannot be undone. This will permanently delete your account
-        and remove your data from our servers.
-      </SheetDescription>
-    </SheetHeader>
+  <SheetContent side="left" className='border-none bg-dark-1'>
+   
+    <Link
+      href={'/'}
+      className='flex items-center gap-1'
+      >
+    <Image
+    src={logo}
+    width={32}
+    height={32}
+    alt='MeetOne Logo'
+    className='max-sm:size-10'
+    />
+    <p className='text-[26px] font-extrabold text-white max-sm:hidden'>MeetOne</p>
+      </Link>
   </SheetContent>
 </Sheet>
 
