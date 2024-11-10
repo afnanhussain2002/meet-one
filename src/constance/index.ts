@@ -1,22 +1,26 @@
+import homeImage from '../public/icons/Home.svg'
+import upcomingImage from '../public/icons/upcoming.svg'
+import previousImage from '../public/icons/previous.svg'
+import recordingsImage from '../public/icons/recordings.svg'
 export const sidebarLinks = [
     {
         label: "Home",
         route: "/",
-        imgUrl: "/icons/home.svg",
+        imgUrl: homeImage,
     },
     {
         label: "Upcoming",
         route: "/upcoming",
-        imgUrl: "/icons/upcoming.svg",
+        imgUrl: upcomingImage,
     },
     {
         label: "Previous",
         route: "/previous",
-        imgUrl: "/icons/previous.svg",
+        imgUrl: previousImage,
     },
     {
         label: "Recordings",
         route: "/recordings",
-        imgUrl: "/icons/recordings.svg",
+        imgUrl: recordingsImage,
     },
 ]
