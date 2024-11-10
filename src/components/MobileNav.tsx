@@ -8,12 +8,15 @@ import {
     SheetTrigger,
   } from "@/components/ui/sheet"
   
+  import BurgerMenu from '@/public/icons/hamburger.svg'
 
 const MobileNav = () => {
   return (
    <section className='w-full max-w-[264px]'>
 <Sheet>
-  <SheetTrigger>Open</SheetTrigger>
+  <SheetTrigger>
+    
+  </SheetTrigger>
   <SheetContent>
     <SheetHeader>
       <SheetTitle>Are you absolutely sure?</SheetTitle>
