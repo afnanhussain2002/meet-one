@@ -49,11 +49,12 @@ const MobileNav = () => {
                     pathname === link.route ||
                     pathname.startsWith(`${link.route}/`);
                   return (
+                    <SheetClose asChild key={link.route}>
                     <Link
                       href={link.route}
                       key={link.label}
                       className={cn(
-                        "flex gap-4 items-center p-4 rounded-lg justify-start",
+                        "flex gap-4 items-center p-4 rounded-lg w-full max-w-60",
                         {
                           "bg-blue-1": isActive,
                         }
@@ -62,13 +63,15 @@ const MobileNav = () => {
                       <Image
                         src={link.imgUrl}
                         alt={link.label}
-                        width={24}
-                        height={24}
+                        width={20}
+                        height={20}
                       />
-                      <p className="text-lg font-semibold max-lg:hidden">
+                      <p className="font-semibold ">
                         {link.label}
                       </p>
                     </Link>
+
+                    </SheetClose>
                   );
                 })}
               </section>
