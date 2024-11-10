@@ -1,8 +1,10 @@
 import React from 'react'
 
-const RootLayout = () => {
+const RootLayout = ({children}: {children: React.ReactNode}) => {
   return (
-    <div>RootLayout</div>
+    <main>
+      {children}
+    </main>
   )
 }
 
