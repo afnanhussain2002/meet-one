@@ -15,6 +15,16 @@ import { ReactNode, useEffect, useState } from 'react';
     useEffect(() => {
         if(!isLoaded || !user) return;
         if(!apiKey) throw new Error('Missing Stream API Key');
+
+        const client = new StreamVideoClient({
+            apiKey,
+            user:{
+                id: user?.id,
+                name: user?.username || user?.id,
+                image: user?.imageUrl
+            },
+            tokenProvider
+        })
     },[user, isLoaded])
     return (
       <StreamVideo client={videoClient}>
