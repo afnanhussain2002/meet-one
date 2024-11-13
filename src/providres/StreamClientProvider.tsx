@@ -1,4 +1,5 @@
 import { tokenProvider } from '@/actions/stream.actions';
+import Loader from '@/components/Loader';
 import { useUser } from '@clerk/nextjs';
 import {
     StreamVideo,
@@ -30,9 +31,7 @@ import { ReactNode, useEffect, useState } from 'react';
         setVideoClient(client)
     },[user, isLoaded])
 
-    if (!videoClient) {
-        
-    }
+    if (!videoClient) return <Loader/>;
     return (
       <StreamVideo client={videoClient}>
      
