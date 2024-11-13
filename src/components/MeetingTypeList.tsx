@@ -44,7 +44,12 @@ const MeetingTypeList = () => {
         className="bg-yellow-1"
       />
       <MeetingModal
-      
+      isOpen={meetingState === "isInstantMeeting"}
+      onclose={() => setMeetingState(undefined)}
+      title="Start an Instant Meeting"
+      className="text-center"
+      buttonText="Start Meeting"
+      handleClick={createMeeting}
       />
     </section>
   );
