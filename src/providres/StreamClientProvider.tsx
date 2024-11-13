@@ -1,26 +1,17 @@
 import {
-    StreamCall,
     StreamVideo,
-    StreamVideoClient,
-    User,
   } from '@stream-io/video-react-sdk';
   
-  const apiKey = 'your-api-key';
-  const userId = 'user-id';
-  const token = 'authentication-token';
-  const user: User = { id: userId };
+  const apiKey = process.env.NEXT_PUBLIC_STREAM_KEY;
+ 
   
-  const client = new StreamVideoClient({ apiKey, user, token });
-  const call = client.call('default', 'my-first-call');
-  call.join({ create: true });
-  
-  export const MyApp = () => {
+ const StreamVideoProvider = () => {
     return (
       <StreamVideo client={client}>
-        <StreamCall call={call}>
-          /* <MyVideoUI /> */
-        </StreamCall>
+     
       </StreamVideo>
     );
   };
+
+  export default StreamVideoProvider;
   
