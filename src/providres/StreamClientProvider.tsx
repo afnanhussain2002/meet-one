@@ -1,3 +1,4 @@
+import { tokenProvider } from '@/actions/stream.actions';
 import { useUser } from '@clerk/nextjs';
 import {
     StreamVideo,
@@ -23,8 +24,10 @@ import { ReactNode, useEffect, useState } from 'react';
                 name: user?.username || user?.id,
                 image: user?.imageUrl
             },
-            tokenProvider
+          tokenProvider
         })
+
+        setVideoClient(client)
     },[user, isLoaded])
     return (
       <StreamVideo client={videoClient}>
