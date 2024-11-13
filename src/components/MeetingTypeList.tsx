@@ -1,7 +1,6 @@
 "use client"
 import React from 'react'
-import AddMeeting from '@/public/icons/add-meeting.svg'
-import Image from 'next/image'
+
 
 const MeetingTypeList = () => {
   return (
