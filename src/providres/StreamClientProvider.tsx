@@ -1,3 +1,4 @@
+"use client"
 import { tokenProvider } from '@/actions/stream.actions';
 import Loader from '@/components/Loader';
 import { useUser } from '@clerk/nextjs';
@@ -10,7 +11,7 @@ import { ReactNode, useEffect, useState } from 'react';
   const apiKey = process.env.NEXT_PUBLIC_STREAM_KEY;
  
   
- const StreamVideoProvider = ({children}:{children: ReactNode}) => {
+ const StreamClientProvider = ({children}:{children: ReactNode}) => {
 
     const [videoClient, setVideoClient] = useState<StreamVideoClient>();
    const {user, isLoaded} = useUser();
@@ -39,5 +40,5 @@ import { ReactNode, useEffect, useState } from 'react';
     );
   };
 
-  export default StreamVideoProvider;
+  export default StreamClientProvider;
   
