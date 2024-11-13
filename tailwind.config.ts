@@ -18,9 +18,9 @@ const config = {
 			blue: {
 				1: '#0E78F9',
 			  },
-			 /*  backgroundImage: {
-				  hero: "url('/src/public/images/hero-background.png')",
-			  }, */
+			 sky:{
+				 1: '#C9DDFF',
+			 },
 
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
