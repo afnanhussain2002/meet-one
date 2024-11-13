@@ -1,6 +1,6 @@
 import React from 'react'
 
-const MeetingModal = () => {
+const MeetingModal = ({isOpen, onClose, children, handleClink, buttonText, title, image, buttonIcon }: MeetingModalProps) => {
   return (
     <div>MeetingModal</div>
   )
