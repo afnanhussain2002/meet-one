@@ -15,4 +15,6 @@ export const tokenProvider = async () => {
     if(!apiSecret) throw new Error('Missing Stream Secret Key');
 
     const client = new StreamClient(apiKey, apiSecret);
+
+    const exp = Math.round(new Date().getTime() / 1000) + 60 * 60;
 }
