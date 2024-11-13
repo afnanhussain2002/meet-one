@@ -6,6 +6,7 @@ import ScheduleMeeting from "@/public/icons/schedule.svg";
 import RecordMeeting from "@/public/icons/recordings.svg";
 import JoinMeeting from "@/public/icons/join-meeting.svg";
 import { useRouter } from "next/navigation";
+import MeetingModal from "./MeetingModal";
 
 const MeetingTypeList = () => {
     const [meetingState, setMeetingState] = useState<
@@ -41,6 +42,9 @@ const MeetingTypeList = () => {
         description="Via invitation link"
         handleClink={() => setMeetingState("isJoiningMeeting")}
         className="bg-yellow-1"
+      />
+      <MeetingModal
+      
       />
     </section>
   );
