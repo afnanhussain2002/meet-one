@@ -1,8 +1,18 @@
-import { VideoPreview } from '@stream-io/video-react-sdk'
-import React, { useState } from 'react'
+"use client"
+import { useCall, VideoPreview } from '@stream-io/video-react-sdk'
+import React, { useEffect, useState } from 'react'
 
 const MeetingSetup = () => {
     const [isMicCamToggledOn, setisMicCamToggledOn] = useState(false)
+
+    const call = useCall();
+
+    useEffect(() =>{
+  if (isMicCamToggledOn) {
+    call?.camera.disable();
+    call?.microphone.disable();
+  }
+    },[isMicCamToggledOn, call?.camera, call?.microphone])
   return (
     <div className='flex h-screen w-full flex-col items-center justify-center gap-3 text-white'>
 
