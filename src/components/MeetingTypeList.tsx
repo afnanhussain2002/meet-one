@@ -7,13 +7,21 @@ import RecordMeeting from "@/public/icons/recordings.svg";
 import JoinMeeting from "@/public/icons/join-meeting.svg";
 import { useRouter } from "next/navigation";
 import MeetingModal from "./MeetingModal";
+import { useUser } from "@clerk/nextjs";
+import { useStreamVideoClient } from "@stream-io/video-react-sdk";
 
 const MeetingTypeList = () => {
     const [meetingState, setMeetingState] = useState<
     "isScheduleMeeting" | "isInstantMeeting" | "isJoiningMeeting" | undefined
     >();
     const router = useRouter();
-
+    const {user} = useUser();
+    const clinet = useStreamVideoClient();
+    const [values, setValues] = useState({
+      dateTime: new Date(),
+      description: "",
+      link: "",
+    });
     const createMeeting = () => {
         
     }
