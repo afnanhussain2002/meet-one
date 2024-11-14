@@ -30,6 +30,12 @@ const MeetingTypeList = () => {
         if (!client || !user) return;
 
         try {
+          if (!values.dateTime) {
+            toast({
+              title: "Please select a date and time",
+            })
+            return;
+          }
           const id = crypto.randomUUID();
           const call = client.call('default', id)
 
