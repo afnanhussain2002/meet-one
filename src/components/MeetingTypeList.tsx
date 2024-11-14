@@ -8,7 +8,7 @@ import JoinMeeting from "@/public/icons/join-meeting.svg";
 import { useRouter } from "next/navigation";
 import MeetingModal from "./MeetingModal";
 import { useUser } from "@clerk/nextjs";
-import { useStreamVideoClient } from "@stream-io/video-react-sdk";
+import { Call, useStreamVideoClient } from "@stream-io/video-react-sdk";
 
 const MeetingTypeList = () => {
     const [meetingState, setMeetingState] = useState<
@@ -22,6 +22,7 @@ const MeetingTypeList = () => {
       description: "",
       link: "",
     });
+    const [call, setCall] = useState<Call>();
     const createMeeting = async() => {
         if (!client || !user) return;
 
