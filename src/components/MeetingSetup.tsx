@@ -7,6 +7,10 @@ const MeetingSetup = () => {
 
     const call = useCall();
 
+    if (!call) {
+        throw new Error('usecall must be used within StreamCall component');
+    }
+
     useEffect(() =>{
   if (isMicCamToggledOn) {
     call?.camera.disable();
