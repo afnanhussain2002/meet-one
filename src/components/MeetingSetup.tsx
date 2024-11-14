@@ -11,6 +11,9 @@ const MeetingSetup = () => {
   if (isMicCamToggledOn) {
     call?.camera.disable();
     call?.microphone.disable();
+  }else{
+    call?.camera.enable();
+    call?.microphone.enable();
   }
     },[isMicCamToggledOn, call?.camera, call?.microphone])
   return (
