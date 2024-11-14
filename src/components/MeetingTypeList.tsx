@@ -22,14 +22,36 @@ const MeetingTypeList = () => {
       description: "",
       link: "",
     });
-    const [call, setCall] = useState<Call>();
+    const [callDetails, setCallDetails] = useState<Call>();
     const createMeeting = async() => {
         if (!client || !user) return;
 
         try {
-          
+          const id = crypto.randomUUID();
+          const call = client.call('default', id)
+
+          if(!call) throw new Error('Failed to create call'); 
+
+          const startsAt = values.dateTime.toISOString() || new Date(Date.now()).toISOString();
+
+          const description = values.description || 'Instant Meeting';
+
+          await call.getOrCreate({
+            data:{
+              starts_at: startsAt,
+              custom:{
+                description
+              }
+            }
+          })
+
+          setCallDetails(call);
+
+          if (!values.description) {
+            router.push(`/meeting/${call.id}`);
+          }
         } catch (error) {
-          
+          console.log(error);
         }
     }
   return (
