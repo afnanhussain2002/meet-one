@@ -22,7 +22,8 @@ const MeetingTypeList = () => {
       description: "",
       link: "",
     });
-    const createMeeting = () => {
+    const createMeeting = async() => {
+        if (!clinet || !user) return;
         
     }
   return (
