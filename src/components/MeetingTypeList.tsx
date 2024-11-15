@@ -11,6 +11,7 @@ import { useUser } from "@clerk/nextjs";
 import { Call, useStreamVideoClient } from "@stream-io/video-react-sdk";
 import { useToast } from "@/hooks/use-toast";
 import { Textarea } from "./ui/textarea";
+import ReactDatePicker from "react-datepicker";
 
 const MeetingTypeList = () => {
     const [meetingState, setMeetingState] = useState<
@@ -115,6 +116,7 @@ const MeetingTypeList = () => {
           </div>
           <div className="flex flex-col gap-2.5">
           <label className="text-base text-normal leading-[22px] text-sky-2">Select Date and Time</label>
+          <ReactDatePicker/>
           </div>
         </MeetingModal>
       ): (
