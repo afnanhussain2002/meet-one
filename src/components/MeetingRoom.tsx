@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils";
 import {
   CallControls,
   CallParticipantsList,
+  CallStatsButton,
   PaginatedGridLayout,
   SpeakerLayout,
 } from "@stream-io/video-react-sdk";
@@ -69,6 +70,7 @@ const MeetingRoom = () => {
             ))}
           </DropdownMenuContent>
         </DropdownMenu>
+        <CallStatsButton/>
       </div>
     </section>
   );
