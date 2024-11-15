@@ -5,6 +5,7 @@ import {
   CallStatsButton,
   PaginatedGridLayout,
   SpeakerLayout,
+  useCallStateHooks,
 } from "@stream-io/video-react-sdk";
 import React, { useState } from "react";
 import {
@@ -24,6 +25,9 @@ const MeetingRoom = () => {
   const isPersonalRoom = !!searchParams.get("personal");
   const [layout, setLayout] = useState<CallLayoutType>("speaker-left");
   const [showParticipants, setShowParticipants] = useState(false);
+
+  const {useCallingStateHooks} = useCallStateHooks();
+  const callingState = useCallingStateHooks();
 
   const CallLayout = () => {
     switch (layout) {
