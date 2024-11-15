@@ -119,6 +119,11 @@ const MeetingTypeList = () => {
           <ReactDatePicker
           selected={values.dateTime}
           onChange={(date) => setValues({...values, dateTime: date!})}
+          showTimeSelect
+          timeFormat="HH:mm"
+          dateFormat="MMMM d, yyyy h:mm aa"
+          timeIntervals={15}
+          className="w-full rounded bg-dark-3 p-2 focus:outline-none"
           />
           </div>
         </MeetingModal>
