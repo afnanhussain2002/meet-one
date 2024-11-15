@@ -15,9 +15,12 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { LayoutList, Users } from "lucide-react";
+import { useSearchParams } from "next/navigation";
 
 type CallLayoutType = "speaker-left" | "speaker-right" | "grid";
 const MeetingRoom = () => {
+  const searchParams = useSearchParams();
+  const isPersonalRoom = searchParams.get("personal");
   const [layout, setLayout] = useState<CallLayoutType>("speaker-left");
   const [showPerticipents, setShowPerticipents] = useState(false);
 
