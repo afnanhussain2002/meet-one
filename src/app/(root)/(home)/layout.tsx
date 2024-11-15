@@ -1,6 +1,15 @@
 import Navbar from "@/components/Navbar";
 import Sidebar from "@/components/Sidebar";
+import { Metadata } from "next";
 import React from "react";
+
+export const metadata: Metadata = {
+  title: "Meet One",
+  description: "Video Calling App",
+  /* icons: {
+    icon:logo
+  } */
+};
 
 const HomeLayout = ({ children }: { children: React.ReactNode }) => {
   return (
