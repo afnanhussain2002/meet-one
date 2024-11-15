@@ -22,7 +22,7 @@ const MeetingRoom = () => {
   const searchParams = useSearchParams();
   const isPersonalRoom = !!searchParams.get("personal");
   const [layout, setLayout] = useState<CallLayoutType>("speaker-left");
-  const [showPerticipents, setShowPerticipents] = useState(false);
+  const [showParticipants, setShowParticipants] = useState(false);
 
   const CallLayout = () => {
     switch (layout) {
@@ -42,10 +42,10 @@ const MeetingRoom = () => {
         </div>
         <div
           className={cn("h-[calc(100vh-86px)] hidden ml-2", {
-            "show-block": showPerticipents,
+            "show-block": showParticipants,
           })}
         >
-          <CallParticipantsList onClose={() => setShowPerticipents(false)} />
+          <CallParticipantsList onClose={() => setShowParticipants(false)} />
         </div>
       </div>
       <div className="fixed bottom-0 flex w-full items-center justify-center gap-5">
@@ -74,7 +74,7 @@ const MeetingRoom = () => {
           </DropdownMenuContent>
         </DropdownMenu>
         <CallStatsButton/>
-        <button onClick={() => setShowPerticipents((prev) => !prev)}>
+        <button onClick={() => setShowParticipants((prev) => !prev)}>
 <div className="cursor-pointer rounded-2xl bg-[#19232] px-4 py-2 hover:bg-[#4c535b]">
 <Users size={20} className="text-white"/>
 </div>
