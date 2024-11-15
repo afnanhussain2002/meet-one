@@ -25,9 +25,9 @@ const MeetingRoom = () => {
       case "grid":
         return <PaginatedGridLayout />;
       case "speaker-right":
-        return <SpeakerLayout participantsBarPosition={"left"} />;
-      default:
         return <SpeakerLayout participantsBarPosition={"right"} />;
+      default:
+        return <SpeakerLayout participantsBarPosition={"left"} />;
     }
   };
   return (
