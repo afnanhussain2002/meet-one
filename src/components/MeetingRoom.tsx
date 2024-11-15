@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import {
   CallControls,
+  CallingState,
   CallParticipantsList,
   CallStatsButton,
   PaginatedGridLayout,
@@ -18,6 +19,7 @@ import {
 import { LayoutList, Users } from "lucide-react";
 import { useSearchParams } from "next/navigation";
 import EndCallButton from "./EndCallButton";
+import Loader from "./Loader";
 
 type CallLayoutType = "speaker-left" | "speaker-right" | "grid";
 const MeetingRoom = () => {
@@ -28,6 +30,8 @@ const MeetingRoom = () => {
 
   const {useCallingStateHooks} = useCallStateHooks();
   const callingState = useCallingStateHooks();
+
+  if(callingState !== CallingState.JOINED) return <Loader/>
 
   const CallLayout = () => {
     switch (layout) {
