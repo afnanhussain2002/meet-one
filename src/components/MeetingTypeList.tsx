@@ -116,7 +116,10 @@ const MeetingTypeList = () => {
           </div>
           <div className="flex flex-col gap-2.5">
           <label className="text-base text-normal leading-[22px] text-sky-2">Select Date and Time</label>
-          <ReactDatePicker/>
+          <ReactDatePicker
+          selected={values.dateTime}
+          onChange={(date) => setValues({...values, dateTime: date!})}
+          />
           </div>
         </MeetingModal>
       ): (
