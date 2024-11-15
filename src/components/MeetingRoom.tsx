@@ -1,6 +1,15 @@
 import { cn } from '@/lib/utils'
 import { CallControls, CallParticipantsList, PaginatedGridLayout, SpeakerLayout } from '@stream-io/video-react-sdk'
 import React, { useState } from 'react'
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+
 
 type CallLayoutType = 'speaker-left' | 'speaker-right' | 'grid'
 const MeetingRoom = () => {
