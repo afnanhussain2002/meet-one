@@ -1,3 +1,4 @@
+"use client";
 import { cn } from "@/lib/utils";
 import {
   CallControls,
@@ -28,8 +29,8 @@ const MeetingRoom = () => {
   const [layout, setLayout] = useState<CallLayoutType>("speaker-left");
   const [showParticipants, setShowParticipants] = useState(false);
 
-  const {useCallingStateHooks} = useCallStateHooks();
-  const callingState = useCallingStateHooks();
+  const {useCallCallingState} = useCallStateHooks();
+  const callingState = useCallCallingState();
 
   if(callingState !== CallingState.JOINED) return <Loader/>
 
@@ -57,7 +58,7 @@ const MeetingRoom = () => {
           <CallParticipantsList onClose={() => setShowParticipants(false)} />
         </div>
       </div>
-      <div className="fixed bottom-0 flex w-full items-center justify-center gap-5">
+      <div className="fixed bottom-0 flex w-full items-center justify-center gap-5 flex-wrap">
         <CallControls />
 
         <DropdownMenu>
