@@ -106,7 +106,7 @@ const MeetingTypeList = () => {
       {!callDetails ? (
         <MeetingModal
         isOpen={meetingState === "isScheduleMeeting"}
-        onclose={() => setMeetingState(undefined)}
+        onClose={() => setMeetingState(undefined)}
         title="Create Meeting"
         handleClick={createMeeting}
         >
@@ -131,7 +131,7 @@ const MeetingTypeList = () => {
       ): (
         <MeetingModal
       isOpen={meetingState === "isScheduleMeeting"}
-      onclose={() => setMeetingState(undefined)}
+      onClose={() => setMeetingState(undefined)}
       title=" Meeting Created"
       className="text-center"
       buttonText="Copy Meeting Link"
@@ -145,7 +145,7 @@ const MeetingTypeList = () => {
       )}
       <MeetingModal
       isOpen={meetingState === "isInstantMeeting"}
-      onclose={() => setMeetingState(undefined)}
+      onClose={() => setMeetingState(undefined)}
       title="Start an Instant Meeting"
       className="text-center"
       buttonText="Start Meeting"
