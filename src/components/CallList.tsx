@@ -1,3 +1,4 @@
+
 'use client'
 import { useGetCalls } from '@/hooks/useGetCalls'
 import { CallRecording } from '@stream-io/node-sdk'
@@ -51,7 +52,7 @@ const CallList = ({type}: {type: 'ended' | 'upcoming' | 'recordings'}) => {
         type === 'ended' ?  '/src/public/icons/call-ended.svg' : type === 'recordings' ? '/src/public/icons/recordings.svg' :  '/src/public/icons/upcoming.svg'
       }
       title={(meeting as Call).state.custom.description.substring(0, 20) || 'No title'}
-      date=''
+      date={(meeting as Call).state.startsAt?.toLocaleString() || (meeting as CallRecording).start_time.toLocaleString()}
       isPreviousMeeting
       buttonIcon1=''
       handleClick={() => {}}
