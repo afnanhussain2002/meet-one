@@ -1,3 +1,4 @@
+'use client'
 import { useGetCalls } from '@/hooks/useGetCalls'
 import React from 'react'
 
