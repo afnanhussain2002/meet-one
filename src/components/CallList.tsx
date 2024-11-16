@@ -51,13 +51,13 @@ const CallList = ({type}: {type: 'ended' | 'upcoming' | 'recordings'}) => {
       icon={
         type === 'ended' ?  '/src/public/icons/call-ended.svg' : type === 'recordings' ? '/src/public/icons/recordings.svg' :  '/src/public/icons/upcoming.svg'
       }
-      title={(meeting as Call).state.custom.description.substring(0, 20) || 'No title'}
+      title={(meeting as Call).state.custom.description.substring(0, 26) || 'No title'}
       date={(meeting as Call).state.startsAt?.toLocaleString() || (meeting as CallRecording).start_time.toLocaleString()}
-      isPreviousMeeting
-      buttonIcon1=''
+      isPreviousMeeting={type === 'ended'}
+      buttonIcon1={type === 'recordings'? '/src/public/icons/play.svg': undefined}
       handleClick={() => {}}
-      link=''
-      buttonText=''
+      link={type === 'recordings' ? (meeting as CallRecording).url : `${process.env.NEXT_PUBLIC_BASE_URL}/meeting/${(meeting as Call).id}`}
+      buttonText={type === 'recordings' ? 'Play' : 'Start'}
       />
     ))
   ) : (
