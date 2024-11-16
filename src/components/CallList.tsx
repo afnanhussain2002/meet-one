@@ -36,8 +36,12 @@ const CallList = ({type}: {type: 'ended' | 'upcoming' | 'recordings'}) => {
         return''
     }
   }
+  const calls = getCalls();
+  const noCallsMessage = getNoCallsMessage();
   return (
-    <div>CallList</div>
+    <div className='grid grid-cols-1 gap-5 xl:grid-cols-2'>
+
+    </div>
   )
 }
 
