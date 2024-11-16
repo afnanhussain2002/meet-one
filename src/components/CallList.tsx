@@ -3,6 +3,9 @@ import { useGetCalls } from '@/hooks/useGetCalls'
 import { CallRecording } from '@stream-io/node-sdk'
 import { useRouter } from 'next/navigation'
 import React, { useState } from 'react'
+import MeetingCard from './MeetingCard'
+import { Call } from '@stream-io/video-react-sdk'
+
 
 const CallList = ({type}: {type: 'ended' | 'upcoming' | 'recordings'}) => {
   const {endedCalls, upcomingCalls, callRecordings, isLoading} = useGetCalls()
@@ -40,8 +43,27 @@ const CallList = ({type}: {type: 'ended' | 'upcoming' | 'recordings'}) => {
   const noCallsMessage = getNoCallsMessage();
   return (
     <div className='grid grid-cols-1 gap-5 xl:grid-cols-2'>
+  {calls && calls.length > 0 ? (
+    calls.map((meeting: Call | CallRecording) => (
+      <MeetingCard  
+      key={(meeting as Call).id}
+      icon={
+        type === 'ended' ?  '/src/public/icons/call-ended.svg' : type === 'recordings' ? '/src/public/icons/recordings.svg' :  '/src/public/icons/upcoming.svg'
+      }
+      title={(meeting as Call).state.custom.description.substring(0, 20) || 'No title'}
+      date=''
+      isPreviousMeeting
+      buttonIcon1=''
+      handleClick={() => {}}
+      link=''
+      buttonText=''
+      />
+    ))
+  ) : (
+    <h1>{noCallsMessage}</h1>
+  )}
+</div>
 
-    </div>
   )
 }
 
