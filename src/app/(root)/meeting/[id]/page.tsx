@@ -8,7 +8,7 @@ import { Loader } from "lucide-react";
 import React, { useState } from "react";
 
 const Meeting =  ({ params: {id} }: { params: { id: string } }) => {
-  const { user, isLoaded } = useUser();
+  const { isLoaded } = useUser();
 
   const [isSetupComplete, setIsSetupComplete] = useState(false);
   const {call, isCallLoading} = useGetCallById(id)
